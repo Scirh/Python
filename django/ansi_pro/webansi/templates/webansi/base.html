@@ -1,0 +1,57 @@
+{% load staticfiles%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block  title%}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <style>
+        .banner{
+            background-image: url("{% static 'imgs/1.JPG' %}");
+            background-size: 100%;
+            height: 290px;
+        }
+        .main{
+            margin: 10px;
+        }
+        .footer{
+            text-align: center;
+        }
+    </style>
+</head>
+<a href="name"></a>
+<body>
+<br>
+
+<div class="container">
+    <div class="banner"></div>
+    <br>
+    <div class="main">
+
+        <div>
+        <form action="" role="form" class="form-group form-inline bg-info">
+            <ur class="list-inline row text-center">
+                <li class="col-xs-3"><a href="{% url 'index' %}" target="_blank"><b>主机信息</b></a></li>
+                <li class="col-xs-3"><a href="{% url 'addhosts'%}" target="_blank"><b>添加主机</b></a></li>
+                <li class="col-xs-3"><a href="{% url 'addmodules' %}" target="_blank"><b>添加模块</b></a></li>
+                <li class="col-xs-3"><a href="{% url 'tasks' %}" target="_blank"><b>执行任务</b></a></li>
+            </ur>
+        </form>
+        </div>
+        <hr>
+        {% block content %}{% endblock %}
+    </div>
+    <hr>
+    <div class="footer container">
+        <a href="#" target="_blank">联系我们| <a href="#name">Top</a></a>
+        <br>
+        Phone:12345678900 | mail:sc4242@163.com
+    </div>
+
+</div>
+
+<script src="{% static 'scripts/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

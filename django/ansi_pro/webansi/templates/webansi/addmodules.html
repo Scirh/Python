@@ -1,0 +1,53 @@
+{%  extends 'webansi/base.html' %}
+
+{% block title %}
+添加模块
+{% endblock %}
+
+{%  block content %}
+
+    <div>
+        <form action="" role="form" class="form-inline" method="post">
+            <div class="form-group">
+                <label>&nbsp; 模块
+                    <input type="text" name="module"  class="text form-control" placeholder="请输入模块名">
+                </label>
+            </div>
+            <div class="form-group">
+                <label>&nbsp; 参数
+                    <input type="text" name="args" class="text form-control" placeholder="请输入模块参数">
+                </label>
+            </div>
+            <div class="form-group">
+                &nbsp;<input type="submit" value="提交" class="btn btn-default form-control">
+            </div>
+        </form>
+        <br>
+        <table class="text text-center  table-bordered table">
+            <thead>
+            <tr class="bg-primary">
+                <td><strong>模块</strong></td>
+                <td><strong>参数</strong></td>
+            </tr>
+
+            {% for module,args in module_info.items %}
+            <tr>
+                <td>{{ module }}</td>
+                <td>
+                    <ul>
+                        {% for arg in args %}
+                            <li>{{ arg }}</li>
+                        {% endfor %}
+
+                    </ul>
+                </td>
+            </tr>
+            </thead>
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}
+
+
+

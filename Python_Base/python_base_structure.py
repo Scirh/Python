@@ -1,6 +1,5 @@
 #Author Scong
 # -*- coding utf-8 -*-
-#help()
 
 '''
 if -0.0:

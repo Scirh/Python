@@ -1,7 +1,7 @@
 # -*- coding utf-8 -*-
 # By Scong
 # Date 2019-01-29
-# Version 1.0.0
+# Version 1.0.1
 
 
 # 随机密码生成器
@@ -23,11 +23,15 @@ def get_pass(get_num):
 
 if __name__ == '__main__':
 
-# 用户自行获取密码长度
-    get_num = int(input("请输入你要生成的密码长度:"))
-	
-# 调用函数
-    password = get_pass(get_num)
-	
-# 打印随机密码
-    print("密码为:", password)
+	#循环判断用户输入的是否为数字，如果不是则警告
+   while True:
+   # 异常处理
+       try:
+           get_num = int(input("请输入你要生成的密码长度："))
+           password = get_pass(get_num)
+           print("密码为：",password)
+           exit()
+       except ValueError:
+           print("\n\033[31;1m请输入正确的密码位数！\033[0m\n")
+
+
